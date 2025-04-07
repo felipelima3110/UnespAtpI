@@ -5,7 +5,7 @@ int main (){
 
     int resultado, n, a = 0, b = 1;
 
-    printf("Digite o números de termos desejados na cadeia de Fibonacci  ");
+    printf("Digite o termo máximo desejado na cadeia de Fibonacci  ");
     scanf("%d", &n);
 
     if (n < 0){
@@ -15,11 +15,15 @@ int main (){
         
         printf("%d \n", b);
   
-            for(int i = 1; i < n; i++){
+            while ( resultado <= n){
                 resultado = a + b;
                 a = b;
                 b = resultado;
-                printf("%d \n", resultado);
+
+                if (resultado <= n){
+                    printf("%d \n", resultado);
+                } 
+                
 
             }
     }
