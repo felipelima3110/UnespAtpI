@@ -1,51 +1,32 @@
-/*Crie uma função eh_palindromo() que recebe um número inteiro e retorna 1 se for
-palíndromo (ex: 121) ou 0 caso contrário.*/
-#include<stdio.h>
-#include<stdlib.h>
+#include <iostream>
 
-void perorre_dir_esq(int numero){
-
-
-   
-   for(int i = numero; i >= 1; i--){
-
-        int resposta /= i;
-        resposta = i;
-        printf("antes %d - :)\n", resposta);
-        //if( i < 10){
-
-          //  printf("antes %d - :)\n", i);
-            //break;
-            //}
+bool ehPalindromo(int num) {
+    if (num < 0) {
+        return false; // Números negativos não são palíndromos
     }
-    
-    //int i = 10;
 
-   /*
-   while(numero >= i){
-        int resposta = numero/i;
+    int reversedNum = 0;
+    int originalNum = num;
 
-        printf("%d \n", resposta);
-
-        i = i-10;
+    while (num > 0) {
+        int lastDigit = num % 10;
+        reversedNum = (reversedNum * 10) + lastDigit;
+        num /= 10;
     }
-   */ 
-       // int numero2 = numero;
-        
-       
-    
 
-  
+    return reversedNum == originalNum;
 }
 
+int main() {
+    int num;
+    std::cout << "Digite um número: ";
+    std::cin >> num;
 
+    if (ehPalindromo(num)) {
+        std::cout << num << " é um palíndromo." << std::endl;
+    } else {
+        std::cout << num << " não é um palíndromo." << std::endl;
+    }
 
-int main(){
-
-    int numero = 4207;
-
-    perorre_dir_esq(numero);
-
-    getchar();
     return 0;
 }
