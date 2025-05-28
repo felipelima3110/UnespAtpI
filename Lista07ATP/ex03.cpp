@@ -1,40 +1,41 @@
-/*
-Crie uma função que verifique se um elemento x está presente no vetor A de
-tamanho T.
-*/
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-using namespace std;
+bool encontra(int *v, int t, int *e){
 
-int vetorA[5] = {2,4,6,8,500};
-int vetorB[5] = {10,2,30,40,500}; 
+    bool encontrado = false;
 
-int procura(int *v, int *u ){ 
- 
-    for(int i = 0; i < 5; i++){
-    
-        for(int j = 0; j < 5; j++){
-            
-            if(v[i]==u[j]){
-                printf("o número %d encontra-se nas duas listas\n", v[i]);
-           
-            }
-
-        }
-        
+for(int i =0; i < t; i++){
+    if(v[i]==*e){
+        encontrado = true;
     }
-
 }
+	return encontrado;
+}
+
 
 int main(){
 
+int tamanho, elemento;
+int vetorA[5] = {15,30,40,45,60};
+int *ptrv = vetorA;
+int *ptre;
 
-int *vptr = vetorA; 
-int *uptr = vetorB;
+printf("Digite o tamanho do vetor");
+scanf("%d", &tamanho);
+printf("Digite o elemento a se pesquisar");
+scanf("%d", &elemento);
 
-procura(uptr,vptr);
+ptre = &elemento;
 
-    getchar();
-    return 0;
+if(encontra(ptrv, tamanho, ptre)){
+    printf("O elemento %i  no vetor de tamanho %d  foi Encontrado!", *ptre, tamanho);
+} else{
+    printf("Não encontrado");
+}
+
+printf("\n");
+
+getchar();
+return 0;
 }
