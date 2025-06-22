@@ -1,0 +1,61 @@
+Em C++, chamar a função main recursivamente é *expressamente proibido pelo padrão da linguagem* (ISO C++). Isso resulta em *comportamento indefinido* (undefined behavior), conforme definido na seção [[basic.start.main]](https://timsong-cpp.github.io/cppwp/n4861/basic.start.main#3) do padrão. Apesar disso, alguns compiladores podem permitir a execução, mas *não é uma prática recomendada*.
+
+### Programa Exemplo (Não Portável - Somente para Estudo):
+cpp
+#include <iostream>
+
+int main() {
+    static int contador = 0; // Variável estática para controle
+    std::cout << "Chamada recursiva #" << contador << std::endl;
+    
+    if (contador++ < 5) {
+        main(); // ATENÇÃO: Comportamento indefinido!
+    }
+    
+    return 0;
+}
+
+
+### Problemas Desta Abordagem:
+1. *Comportamento Indefinido*: O padrão C++ proíbe explicitamente chamadas recursivas a main.
+2. *Falta de Parâmetros*: main não pode receber parâmetros, limitando o controle da recursão.
+3. *Estouro de Pilha*: Risco elevado sem uma condição de parada robusta.
+4. *Portabilidade*: Pode falhar em diferentes compiladores.
+
+---
+
+### Alternativa Correta (Recursão com Função Auxiliar):
+cpp
+#include <iostream>
+
+void funcaoRecursiva(int contador) {
+    std::cout << "Recursão #" << contador << std::endl;
+    if (contador < 5) {
+        funcaoRecursiva(contador + 1); // Chamada recursiva segura
+    }
+}
+
+int main() {
+    funcaoRecursiva(0); // Inicia a recursão
+    return 0;
+}
+
+
+### Por Que Esta Solução é Melhor:
+- *Respeita o padrão C++*: Evita comportamento indefinido.
+- *Controle total*: Parâmetros permitem gerenciar o estado da recursão.
+- *Segurança*: Menor risco de estouro de pilha com critérios de parada claros.
+- *Portabilidade*: Funciona em qualquer compilador compatível com C++.
+
+### Saída do Programa:
+
+Recursão #0
+Recursão #1
+Recursão #2
+Recursão #3
+Recursão #4
+Recursão #5
+
+
+### Conclusão:
+Nunca chame main recursivamente em código real. Use uma função auxiliar para implementar recursão de forma segura e portável.

@@ -1,0 +1,14 @@
+Preencha os espaços em cada uma das sentenças a seguir:
+a) C armazena listas de valores em ______.(arrays)
+b) Os elementos de um array têm em comum o fato de que eles ______.(serem do mesmo tipo)
+c) Ao se referir a um elemento do array, o número da posição contido dentro dos parênteses é um(a)
+______.(índice)
+d) Os nomes dos cinco elementos do array p são ______, ______, ______, ______ e ______.(p[0],p[1],p[2],p[3],p[4])
+e) O conteúdo de um elemento em particular de um array é chamado ______ desse elemento.(valor)
+f) Dar nome a um array, indicar seu tipo e especificar o número de elementos contidos nele é chamado
+______ o array.(declarar)
+g) Em um array de subscrito duplo (matriz), o primeiro subscrito (por convenção) identifica a ______(quantidade de linhas) de
+um elemento, e o segundo subscrito (por convenção) identifica a ______(quantidade de colunas) de um elemento.
+h) Um array *m*-por-*n* contém ______(m) linhas, ______ (n)colunas e ______ (m x n )elementos.
+i) O nome do elemento do array d na linha 3, coluna 5 é ______(d[2][4]).
+

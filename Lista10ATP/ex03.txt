@@ -1,0 +1,41 @@
+Encontre o erro em cada um dos segmentos de programa a seguir.
+a)int *number;
+printf("%d\n", *number);
+/*faltou inicializar variável e atribuir o conteúdo ao ponteiro*/
+
+
+
+b) float *realPtr;
+long *integerPtr;
+integerPtr = realPtr;
+/* não se cria ponteiro para inicializa-lo com valores de tipos diferentes*/
+/*faltou incluir o sinal "&" antes de realPtr para se atribuir o conteúdo ao ponteiro*/
+
+c) int *x, y;
+x = y;
+/*faltou incluir o sinal "&" antes de y para se atribuir o conteúdo ao ponteiro*/
+
+
+d) char s[] = "um array de caracteres";
+int count;
+for (; *s != '\0'; s++)
+printf("%c ", *s);
+
+/* na 3ª linha o "s" é a mesma variável auxiliar para iteração, sendo que já foi declarada antes como nome de array*/
+
+e) short *numPtr, result;
+void *genericPtr = numPtr;
+result = *genericPtr + 7;
+/* na 3ª linha a variável result e o endereço *genericPtr estão em locais invertidos"; além disso considerando a posiçõo correta
+a atribuição de valor a um ponteiro deve ser efetuada com o sinal "&" e não "*";*/
+
+
+f) float x = 19.34;
+float xPtr = &x;
+printf("%f\n", xPtr);
+/*faltou adicionar o asterisco antes de xPtr nas duas linhas*/
+
+g) char *s;
+printf("%s\n", s);
+/*faltou inicializar uma variável para se atribuir um valor char ao endereço do ponteiro*/
+/*erro no código para se expressar o valor da variável char: após a porcentagem deve-se utilizar "c" e não "s*/
