@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
     printf("n2=%s\n", argv[2]);
 
     double x;
-    int basedez,casa;
+    int casa;
 
     x = atof(argv[1]);
     casa = atoi(argv[2]);

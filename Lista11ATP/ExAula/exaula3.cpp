@@ -7,7 +7,7 @@ int main()
     FILE *f; 
     char linha [100];
     
-    f = fopen("log.txt", "r"); //abre o arquivo log.txt, a letra r indica que vamos ler algo nesse arquivo (read)
+    f = fopen("mat3.txt", "r"); //abre o arquivo log.txt, a letra r indica que vamos ler algo nesse arquivo (read)
     
     if(f) //verificação se o arquivo f foi acessado
     {
